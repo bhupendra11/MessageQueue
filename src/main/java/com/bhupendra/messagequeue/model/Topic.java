@@ -15,7 +15,7 @@ import java.util.List;
 public class Topic {
     private final String topicId;
     private final String topicName;
-    private final List<String> messages;  // TODO: Change getter to send only immutable list
+    private final List<Message> messages;  // TODO: Change getter to send only immutable list
     private final List<TopicSubscriber> subscribers; // TODO: Change getter to send only immutable list
 
     public Topic(@NonNull final String topicId,@NonNull final String topicName){
@@ -25,7 +25,7 @@ public class Topic {
         subscribers = new ArrayList<>();
     }
 
-    public synchronized void addMessage(@NonNull final String message){
+    public synchronized void addMessage(@NonNull final Message message){
         messages.add(message);
     }
 
